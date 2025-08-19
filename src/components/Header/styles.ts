@@ -2,6 +2,10 @@ import styled from "styled-components";
 import { colors } from "../../style";
 import {HeaderProps} from '.'
 
+type Props = {
+    float: 'esquerda' | 'direita'
+}
+
 export const Imagem = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
@@ -12,16 +16,15 @@ export const Fundo = styled.div`
     align-items: center;
 `
 export const FundoPerfil = styled.div`
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: space-between;
-    
-
-    span{
-        font-size: 18px;
-        font-weight: 900;
-        color: ${colors.vermelho};
-    }
+`
+export const HeaderPerfilText = styled.p<Props>`
+    font-size: 18px;
+    text-align: ${props => props.float === 'esquerda' ? 'left' : 'right'};;
+    font-weight: 900;
+    color: ${colors.vermelho};
 `
 export const Paragrafo = styled.p`
     background-color:  transparent;

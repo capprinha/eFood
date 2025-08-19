@@ -1,4 +1,4 @@
-import { CardList, CardContainer, Title, Description, Button, Tag, TagContainer } from './styles'
+import { CardList, CardContainer, Title, Description, Button, Tag, TagContainer, Assets, Image } from './styles'
 
 import star from '../../assets/estrela.png'
 
@@ -7,31 +7,34 @@ export type CardProps = {
     title: string;
     imagem: string;
     tagDestaque?: string;
-    tagOrigenPais: string;
+    tagOrigenPais?: string;
     description: string;
-    nota: number;
+    nota?: number;
     to?: string;
+    buttonDescription: 'Saiba mais' | 'Adicionar ao carrinho'
+    type: 'home' | 'perfil';
+    onClick?: () => void
 }
-const Card = ({description,imagem,nota,tagOrigenPais,title,tagDestaque,to}:CardProps) => {
+const Card = ({description,imagem,nota,tagOrigenPais,title,tagDestaque,to,buttonDescription,type,onClick}:CardProps) => {
 
     return(
-        <CardContainer>
-            <img src={imagem} />
+        <CardContainer type={type}>
+            <Image type={type} src={imagem} />
             <TagContainer>
                 {tagDestaque && <Tag>{tagDestaque}</Tag>}
-                <Tag>{tagOrigenPais}</Tag>
+                {tagOrigenPais && <Tag>{tagOrigenPais}</Tag>}
             </TagContainer>
-            <CardList>
-                <Title>{title}</Title>
-                <div>
+            <CardList type={type}>
+                <Title type={type}>{title}</Title>
+                <Assets type={type}>
                     <span>{nota}</span>
                     <img src={star} alt="Estrela" />
-                </div>
+                </Assets>
             </CardList>
-            <Description>
+            <Description type={type}>
                 {description}    
             </Description>
-            <Button to={to as string}>Saiba mais</Button>
+            <Button type={type} to={to as string} onClick={onClick}>{buttonDescription}</Button>
         </CardContainer>
     )
 }

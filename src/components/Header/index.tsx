@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import {Link} from 'react-router-dom'
 
-import {Fundo, FundoPerfil, Imagem, Logo, Paragrafo} from './styles'
+import {Fundo, FundoPerfil, Imagem, Logo, Paragrafo, HeaderPerfilText} from './styles'
 import fundoHeader from '../../assets/fundo.png'
 import logoHeader from '../../assets/logo.png'
 
@@ -29,16 +29,18 @@ const Header = ({type}:HeaderProps) => {
     } else {
         return(
         <Imagem style={{backgroundImage: `url(${fundoHeader})`}}>
-            <FundoPerfil className='container'>
-                <span>
+            <FundoPerfil  className='container'>
+                <HeaderPerfilText float='esquerda'>
                     Restaurantes
-                </span>
-                <Link to={'/'}>
-                    <Logo type='perfil' src={logoHeader} alt="logo EFOOD" />
-                </Link>
-                <span>
+                </HeaderPerfilText>
+                <div>
+                    <Link to={'/'}>
+                        <Logo type='perfil' src={logoHeader} alt="logo EFOOD" />
+                    </Link>
+                </div>
+                <HeaderPerfilText float='direita'>
                     {itensNoCarrinho} produto(s) no carrinho
-                </span>
+                </HeaderPerfilText>
             </FundoPerfil>
         </Imagem>
         )
