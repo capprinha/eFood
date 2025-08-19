@@ -10,8 +10,9 @@ export type CardProps = {
     tagOrigenPais: string;
     description: string;
     nota: number;
+    to?: string;
 }
-const Card = ({description,imagem,nota,tagOrigenPais,title,tagDestaque}:CardProps) => {
+const Card = ({description,imagem,nota,tagOrigenPais,title,tagDestaque,to}:CardProps) => {
 
     return(
         <CardContainer>
@@ -30,7 +31,7 @@ const Card = ({description,imagem,nota,tagOrigenPais,title,tagDestaque}:CardProp
             <Description>
                 {description}    
             </Description>
-            <Button>Saiba mais</Button>
+            <Button to={to as string}>Saiba mais</Button>
         </CardContainer>
     )
 }

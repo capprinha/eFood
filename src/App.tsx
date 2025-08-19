@@ -1,16 +1,15 @@
-import Footer from './components/Footer';
-import Header from './components/Header';
-import ListCard from './components/ListCard';
-import { Container, } from './style'
+import {BrowserRouter} from 'react-router-dom'
+import Rotas from './routes';
+import { Container } from './style'
 
 
 function App() {
   return (
     <>
-      <Container/>
-      <Header/>
-      <ListCard />    
-      <Footer/>  
+      <BrowserRouter>
+        <Container/>
+        <Rotas/>
+      </BrowserRouter>
     </>
 
   );

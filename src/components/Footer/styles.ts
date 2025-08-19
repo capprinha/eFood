@@ -3,12 +3,13 @@ import { colors } from "../../style";
 
 export const Fundo = styled.footer`
     background-color: ${colors.brancoEscuro};
+`
+export const Dislay = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 40px 0;
 `
-
 export const ListLink = styled.div`
     display: flex;
     align-items: center;

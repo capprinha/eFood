@@ -5,6 +5,10 @@ import { colors } from "../../style"
 import Card, { CardProps } from "../Card"
 import { Grid } from "./styles"
 
+type ListProps = {
+    type: 'home' | 'perfil'
+}
+
 const produtos:CardProps[] = [
     {
         id: 1,
@@ -57,28 +61,34 @@ const produtos:CardProps[] = [
     }
 ]
 
-const ListCard = () => {
+const ListCard = ({type}: ListProps) => {
 
-    return(
-        <div style={{backgroundColor:`${colors.brancoClaro}`}}>
-            <Grid className="container">
-                {produtos.map((produto) => (
-                    <div key={produto.id}>
-                        <Card
-                        id={produto.id}
-                        imagem={produto.imagem}
-                        title={produto.title}
-                        nota={produto.nota}
-                        description={produto.description}
-                        tagOrigenPais={produto.tagOrigenPais}
-                        tagDestaque={produto.tagDestaque}
-                        />
-                    </div>
-                ))}
-            </Grid>
-        </div>
+    if(type === 'home'){
+        return(
+            <div style={{backgroundColor:`${colors.brancoClaro}`}}>
+                <Grid className="container">
+                    {produtos.map((produto) => (
+                        <div key={produto.id}>
+                            <Card
+                            id={produto.id}
+                            imagem={produto.imagem}
+                            title={produto.title}
+                            nota={produto.nota}
+                            description={produto.description}
+                            tagOrigenPais={produto.tagOrigenPais}
+                            tagDestaque={produto.tagDestaque}
+                            to='/perfil'
+                            />
+                        </div>
+                    ))}
+                </Grid>
+            </div>
+        )
+    } else {
+        return null
+    }
 
-    )
+    
 }
 
 export default ListCard

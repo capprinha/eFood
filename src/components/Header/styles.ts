@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../style";
+import {HeaderProps} from '.'
 
 export const Imagem = styled.div`
     background-repeat: no-repeat;
@@ -10,7 +11,18 @@ export const Fundo = styled.div`
     flex-direction: column;
     align-items: center;
 `
+export const FundoPerfil = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
 
+    span{
+        font-size: 18px;
+        font-weight: 900;
+        color: ${colors.vermelho};
+    }
+`
 export const Paragrafo = styled.p`
     background-color:  transparent;
     text-align: center;
@@ -21,6 +33,7 @@ export const Paragrafo = styled.p`
     padding-bottom: 40px;
 `
 
-export const Logo = styled.img`
+export const Logo = styled.img<HeaderProps>`
     margin-top: 64px;
+    margin-bottom: ${props => props.type === 'perfil' ? '65px' : '0px'};
 `
