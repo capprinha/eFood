@@ -1,6 +1,7 @@
 import { CardList, CardContainer, Title, Description, Button, Tag, TagContainer, Assets, Image } from './styles'
 
 import star from '../../assets/estrela.png'
+import { useDispatch } from 'react-redux';
 
 export type CardProps = {
     id: number;

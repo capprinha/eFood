@@ -2,13 +2,17 @@ import { MobalContainer, Image, Title, Description, Button, CloseMobal,FundoMoba
 import fechaMobal from '../../assets/close.png'
 
 import pizza from '../../assets/pizzaMobal.png'
+import { useDispatch } from 'react-redux'
+import { adicionarItem } from '../../store/reducers/carrinho'
 
 type MobalProps = {
     onClick: () => void
+    item: () => void
 }
-const Mobal = ({onClick}:MobalProps) => {
+const Mobal = ({onClick, item}:MobalProps) => {
 
     const valorPizza = 60.90
+    
     return(
         <>
         <FundoMobal fundo="rgba(0,0,0,0.7)">
@@ -27,7 +31,13 @@ const Mobal = ({onClick}:MobalProps) => {
                             <br/>
                             Serve: de 2 a 3 pessoas
                         </Description>
-                        <Button >Adicionar ao carrinho - R$ {valorPizza}</Button>
+                        <Button 
+                        onClick={()=> {
+                            onClick();
+                            item()
+                        }} >
+                            Adicionar ao carrinho - R$ {valorPizza}
+                        </Button>
                     </div>
                 </MobalContainer>
             </div>

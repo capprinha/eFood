@@ -4,14 +4,16 @@ import {Link} from 'react-router-dom'
 import {Fundo, FundoPerfil, Imagem, Logo, Paragrafo, HeaderPerfilText} from './styles'
 import fundoHeader from '../../assets/fundo.png'
 import logoHeader from '../../assets/logo.png'
+import { useSelector } from 'react-redux'
+import { RootReducer } from '../../store'
 
 export type HeaderProps = {
     type: 'home' | 'perfil'
+    onClick?: () => void
 }
 
-const Header = ({type}:HeaderProps) => {
-
-    const [ itensNoCarrinho, setItensNoCarrinho ] = useState(0)
+const Header = ({type,onClick}:HeaderProps) => {
+    const itens = useSelector((state: RootReducer) => state.carrinho.itens)
     
     if(type === 'home'){
         return(
@@ -38,8 +40,8 @@ const Header = ({type}:HeaderProps) => {
                         <Logo type='perfil' src={logoHeader} alt="logo EFOOD" />
                     </Link>
                 </div>
-                <HeaderPerfilText float='direita'>
-                    {itensNoCarrinho} produto(s) no carrinho
+                <HeaderPerfilText float='direita' onClick={onClick}>
+                    {itens} produto(s) no carrinho
                 </HeaderPerfilText>
             </FundoPerfil>
         </Imagem>

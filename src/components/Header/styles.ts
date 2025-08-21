@@ -22,7 +22,8 @@ export const FundoPerfil = styled.div`
 `
 export const HeaderPerfilText = styled.p<Props>`
     font-size: 18px;
-    text-align: ${props => props.float === 'esquerda' ? 'left' : 'right'};;
+    text-align: ${props => props.float === 'esquerda' ? 'left' : 'right'};
+    cursor: ${props => props.float === 'direita' ? 'pointer' : 'default'};
     font-weight: 900;
     color: ${colors.vermelho};
 `

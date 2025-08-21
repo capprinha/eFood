@@ -1,3 +1,6 @@
+import { useState } from "react"
+
+import { useDispatch } from "react-redux"
 import Mobal from "../Mobal"
 import { colors } from "../../style"
 import Card, { CardProps } from "../Card"
@@ -6,7 +9,7 @@ import { Grid } from "./styles"
 import sushi from '../../assets/sushi.png'
 import massa from '../../assets/massa.png'
 import pizza from '../../assets/pizza.png'
-import { useState } from "react"
+import { adicionarItem } from "../../store/reducers/carrinho"
 
 export type ListProps = {
     type: 'home' | 'perfil'
@@ -130,6 +133,8 @@ const produtosPerfil: CardProps[] = [
 const ListCard = ({type}: ListProps) => {
 
     const [ mobalAtiva, setMobalAtiva] = useState(false)
+    const dispatch = useDispatch()
+
     if(type === 'home'){
         return(
             <div style={{backgroundColor:`${colors.brancoClaro}`}}>
@@ -172,7 +177,12 @@ const ListCard = ({type}: ListProps) => {
                         
                     ))}
                 </Grid>
-                {mobalAtiva && <Mobal onClick={() => setMobalAtiva(false)}/>}
+                {mobalAtiva && (
+                    <Mobal onClick={() => setMobalAtiva(false)}
+                    item={()=> dispatch(adicionarItem())}
+                    />
+                )}
+                
             </div>
         )
     }
