@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import {Link} from 'react-router-dom'
 
-import {Fundo, FundoPerfil, Imagem, Logo, Paragrafo, HeaderPerfilText} from './styles'
+import {Fundo, FundoPerfil, Imagem, Logo, Paragrafo, HeaderPerfilText, LinkHeader} from './styles'
 import fundoHeader from '../../assets/fundo.png'
 import logoHeader from '../../assets/logo.png'
 import { useSelector } from 'react-redux'
@@ -19,9 +19,9 @@ const Header = ({type,onClick}:HeaderProps) => {
         return(
         <Imagem style={{backgroundImage: `url(${fundoHeader})`}}>
             <Fundo className='container'>
-                <Link to={'/'}>
+                <LinkHeader to={'/'}>
                     <Logo type='home' src={logoHeader} alt="logo EFOOD" />
-                </Link>
+                </LinkHeader>
                 <Paragrafo>
                     Viva experiências gastronômicas <br/>no conforto da sua casa
                 </Paragrafo>
@@ -36,9 +36,9 @@ const Header = ({type,onClick}:HeaderProps) => {
                     Restaurantes
                 </HeaderPerfilText>
                 <div>
-                    <Link to={'/'}>
+                    <LinkHeader to={'/'}>
                         <Logo type='perfil' src={logoHeader} alt="logo EFOOD" />
-                    </Link>
+                    </LinkHeader>
                 </div>
                 <HeaderPerfilText float='direita' onClick={onClick}>
                     {itens} produto(s) no carrinho

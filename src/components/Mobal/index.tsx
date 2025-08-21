@@ -11,11 +11,10 @@ type MobalProps = {
 }
 const Mobal = ({onClick, item}:MobalProps) => {
 
-    const valorPizza = 60.90
     
     return(
         <>
-        <FundoMobal fundo="rgba(0,0,0,0.7)">
+        <FundoMobal>
             <div className='container'>
                 <MobalContainer>
                     <CloseMobal src={fechaMobal} alt='X' onClick={onClick} />
@@ -36,7 +35,7 @@ const Mobal = ({onClick, item}:MobalProps) => {
                             onClick();
                             item()
                         }} >
-                            Adicionar ao carrinho - R$ {valorPizza}
+                            Adicionar ao carrinho - R$ 60,90
                         </Button>
                     </div>
                 </MobalContainer>

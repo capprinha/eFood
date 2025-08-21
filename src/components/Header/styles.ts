@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { colors } from "../../style";
 import {HeaderProps} from '.'
+import { Link } from "react-router-dom";
 
 type Props = {
     float: 'esquerda' | 'direita'
@@ -26,6 +27,10 @@ export const HeaderPerfilText = styled.p<Props>`
     cursor: ${props => props.float === 'direita' ? 'pointer' : 'default'};
     font-weight: 900;
     color: ${colors.vermelho};
+
+    @media (max-width: 700px){
+        font-size: 10px;
+    }
 `
 export const Paragrafo = styled.p`
     background-color:  transparent;
@@ -40,4 +45,12 @@ export const Paragrafo = styled.p`
 export const Logo = styled.img<HeaderProps>`
     margin-top: 64px;
     margin-bottom: ${props => props.type === 'perfil' ? '65px' : '0px'};
+    @media (max-width: 700px){
+        width: 80%;
+    }
+`
+export const LinkHeader = styled(Link)`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `

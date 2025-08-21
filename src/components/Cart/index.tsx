@@ -19,7 +19,7 @@ const Cart = ({onClick}:CartProps) => {
     return(
         <FundoCarrinho>
             <CartContainer>
-                {itens === 0 ? (<p>Carrinho vazio</p>)
+                {itens === 0 ? (<p className='vazio'>Carrinho vazio</p>)
                 :
                 (Array.from({length: itens}).map((_,index) =>(
                     cardAtivo && (

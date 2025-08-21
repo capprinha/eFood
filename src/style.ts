@@ -19,6 +19,10 @@ export const Container = createGlobalStyle`
         max-width: 1024px;
         width: 100%;
         margin: 0 auto;
+
+        @media (max-width: 700px){
+            width: 80%;
+        }
     }
 `
 export const Fundo = styled.div`

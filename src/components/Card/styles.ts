@@ -12,11 +12,19 @@ export const CardContainer = styled.div<Props>`
     width: ${props => props.type === 'home' ? '472px' : '320px' };
     margin-bottom: ${props => props.type === 'home' ? '48px' : '32px'};
     position: relative;
+
+    @media (max-width: 700px){
+        width: 300px;
+    }
 `
 export const Image = styled.img<Props>`
     padding-top: ${props => props.type === 'home' ? '0px' : '8px'};
     padding-left: ${props => props.type === 'home' ? '0px' : '8px'};
     padding-right: ${props => props.type === 'home' ? '0px' : '8px'};
+
+    @media (max-width: 700px){
+        width: 300px;
+    }
 `
 
 export const CardList = styled.div<Props>`
@@ -60,10 +68,16 @@ export const Button = styled(Link)<Props>`
     padding: ${props => props.type === 'home' ? '4px 6px' : '4px 83px'};
     margin-bottom: 8px;
     margin-left: 8px;
+    margin-right: 8px;
     font-size: 14px;
     font-weight: bold;
     border: none;
     text-decoration: none;
+
+    @media (max-width: 700px){
+        font-size: 10px;
+        width: 95%;
+    }
 `
 
 export const TagContainer = styled.div`

@@ -12,4 +12,7 @@ export const Grid = styled.div<ListProps>`
     padding-top: ${props => props.type === 'home' ? '80px' : '56px'};
     padding-bottom: ${props => props.type === 'home' ? '72px' : '88px'};
     column-gap: ${props => props.type === 'home' ? '80px' : '32px'};
+    @media (max-width: 700px){
+            display: block;
+        }
 `

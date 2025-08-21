@@ -23,6 +23,15 @@ export const CartContainer = styled.div`
     background-color: ${colors.vermelho};
     display: inline-block;
     padding-top: 16px;
+
+    .vazio{
+        color: ${colors.brancoEscuro};
+        text-align: center;
+    }
+
+    @media (max-width: 700px){
+        width: 260px;
+    }
 `
 
 export const ButtonContainer = styled.div`
