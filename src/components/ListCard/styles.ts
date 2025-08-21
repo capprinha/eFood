@@ -14,5 +14,6 @@ export const Grid = styled.div<ListProps>`
     column-gap: ${props => props.type === 'home' ? '80px' : '32px'};
     @media (max-width: 700px){
             display: block;
+            margin: 0 auto;
         }
 `
