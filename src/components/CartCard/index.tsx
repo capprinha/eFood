@@ -5,8 +5,9 @@ import lixeira from '../../assets/lixeira.png'
 
 type Props = {
     onClick: () => void
+    onRemove: () => void
 }
-const CartCard = ({onClick}:Props) => {
+const CartCard = ({onClick,onRemove}:Props) => {
 
     return(
         <CardContainer>
@@ -15,7 +16,12 @@ const CartCard = ({onClick}:Props) => {
                 <h2 className='title'>Pizza Marguerita</h2>
                 <span>R$ 60,90</span>
             </Infos>
-            <Lixeira onClick={onClick} src={lixeira} alt="Lixeira" />
+            <Lixeira 
+                onClick={() => {
+                    onClick();
+                    onRemove()
+                }} 
+                src={lixeira} alt="Lixeira" />
         </CardContainer>
     )
 }

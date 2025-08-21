@@ -2,12 +2,10 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 type CarrinhoSlice = {
     itens: number
-    valor: number
 }
 
 const initialState: CarrinhoSlice ={
-    itens: 0,
-    valor: 0
+    itens: 0
 }
 const carrinhoSlice = createSlice({
     name: 'carrinho',

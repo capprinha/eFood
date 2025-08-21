@@ -1,17 +1,14 @@
 import styled from "styled-components";
 import { colors } from "../../style";
 
-type Props = {
-    fundo: string
-}
 
-export const FundoCarrinho = styled.div<Props>`
+export const FundoCarrinho = styled.div`
     position: fixed;       
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color:${props => props.fundo || '#000'}; 
+    background-color:rgba(0,0,0,0.7); 
     padding: 36px;
     z-index: 1000;
 `
