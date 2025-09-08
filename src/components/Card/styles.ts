@@ -21,6 +21,10 @@ export const Image = styled.img<Props>`
     padding-top: ${props => props.type === 'home' ? '0px' : '8px'};
     padding-left: ${props => props.type === 'home' ? '0px' : '8px'};
     padding-right: ${props => props.type === 'home' ? '0px' : '8px'};
+    width:  ${props => props.type === 'home' ? '472px' : '304px' };
+    height:  ${props => props.type === 'home' ? '398px' : '338pxpx' };
+    object-fit: cover;
+    
 
     @media (max-width: 700px){
         width: 300px;

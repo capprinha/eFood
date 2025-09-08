@@ -13,6 +13,9 @@ type CartProps = {
 const Cart = ({onClick}:CartProps) => {
 
     const itens = useSelector((state: RootReducer) => state.carrinho.itens)
+
+    const listaItens = []
+    listaItens.push(itens)
     const valorPizza = 60.90 * itens
     const [ cardAtivo, setCardAtivo] = useState(true)
     const dispatch = useDispatch()

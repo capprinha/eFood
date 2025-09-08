@@ -4,8 +4,8 @@ import {ListProps} from '.'
 export const Fundo = styled.div`
     background-color: ${colors.brancoClaro};
 `
-
-export const Grid = styled.div<ListProps>`
+type Props = Omit<ListProps, 'produtos' | 'pratos'>
+export const Grid = styled.div<Props>`
     display: grid;
     place-items: center;
     grid-template-columns:${props => props.type === 'home' ? '1fr 1fr': '1fr 1fr 1fr'};

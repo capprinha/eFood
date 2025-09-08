@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { colors } from "../../style";
 import {Props} from '.'
 
-export const Title = styled.h2<Props>`
+type StyledProps = Omit<Props, 'tipo' | 'titulo' | 'capa'>
+export const Title = styled.h2<StyledProps>`
     font-size: 32px;
     padding-top: ${props => props.tamanho === 'small' ? '25px' : '0px'};
     padding-bottom: ${props => props.tamanho === 'small' ? '0px' : '32px'};

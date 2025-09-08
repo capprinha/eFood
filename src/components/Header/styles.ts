@@ -10,6 +10,7 @@ type Props = {
 export const Imagem = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
+    object-fit: cover;
 `
 export const Fundo = styled.div`
     display: flex;
