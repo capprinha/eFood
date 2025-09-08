@@ -14,13 +14,14 @@ export type ListProps =
     |{ type: "home"; produtos: PropsApi[]; pratos? : never }
     |{ type: "perfil"; pratos: Pratos[]; produtos? : never }
 
+    
+
 const ListCard = ({type, pratos, produtos}: ListProps) => {
 
     const [ mobalAtiva, setMobalAtiva] = useState(false)
     const [ pratoSelecionado, setPratoSelecionado] = useState<Pratos | null>(null)
     const dispatch = useDispatch()
 
-    
     
 
     if(type === 'home' && produtos){
@@ -71,8 +72,7 @@ const ListCard = ({type, pratos, produtos}: ListProps) => {
                 </Grid>
                 {mobalAtiva && (
                     <Mobal onClick={() => setMobalAtiva(false)}
-                    item={()=> dispatch(adicionarItem())}
-                    />
+                    item={() => dispatch(adicionarItem())} title={pratoSelecionado?.nome} descrisao={pratoSelecionado?.descricao} porcao={pratoSelecionado?.porcao} preco={pratoSelecionado?.preco} image={pratoSelecionado?.foto}/>
                 )}
                 
             </div>

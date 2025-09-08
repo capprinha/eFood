@@ -16,7 +16,16 @@ export type CardProps = {
     type: 'home' | 'perfil';
     onClick?: () => void
 }
+
+
 const Card = ({description,imagem,nota,tagOrigenPais,title,tagDestaque,to,buttonDescription,type,onClick}:CardProps) => {
+    
+    const getDescrisao = (descrisao: string) => {
+        if(description.length > 125){
+            return description.slice(0, 122) + '...'
+        }
+        return description
+    }
 
     return(
         <CardContainer type={type}>
@@ -33,7 +42,7 @@ const Card = ({description,imagem,nota,tagOrigenPais,title,tagDestaque,to,button
                 </Assets>
             </CardList>
             <Description type={type}>
-                {description}    
+                {getDescrisao(description)}    
             </Description>
             <Button type={type} to={to as string} onClick={onClick}>{buttonDescription}</Button>
         </CardContainer>

@@ -47,6 +47,9 @@ export const CloseMobal = styled.img`
 
 export const Image = styled.img`
     padding-right: 24px;
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
     
     @media (max-width: 700px){
             padding-right: 0;
