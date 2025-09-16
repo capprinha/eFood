@@ -4,21 +4,23 @@ import pizza from '../../assets/pizzaMobal.png'
 import lixeira from '../../assets/lixeira.png'
 
 type Props = {
-    onClick: () => void
+    image: string
+    nome: string
+    preco: number
+    
     onRemove: () => void
 }
-const CartCard = ({onClick,onRemove}:Props) => {
+const CartCard = ({onRemove,image, preco, nome}:Props) => {
 
     return(
         <CardContainer>
-            <Image src={pizza} alt="Pizza Marguerita" />
+            <Image src={image} alt={nome} />
             <Infos>
-                <h2 className='title'>Pizza Marguerita</h2>
-                <span>R$ 60,90</span>
+                <h2 className='title'>{nome}</h2>
+                <span>R$ {preco}</span>
             </Infos>
             <Lixeira 
                 onClick={() => {
-                    onClick();
                     onRemove()
                 }} 
                 src={lixeira} alt="Lixeira" />

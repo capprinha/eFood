@@ -72,7 +72,7 @@ const ListCard = ({type, pratos, produtos}: ListProps) => {
                 </Grid>
                 {mobalAtiva && (
                     <Mobal onClick={() => setMobalAtiva(false)}
-                    item={() => dispatch(adicionarItem())} title={pratoSelecionado?.nome} descrisao={pratoSelecionado?.descricao} porcao={pratoSelecionado?.porcao} preco={pratoSelecionado?.preco} image={pratoSelecionado?.foto}/>
+                    item={() => dispatch(adicionarItem(pratoSelecionado!))} title={pratoSelecionado?.nome} descrisao={pratoSelecionado?.descricao} porcao={pratoSelecionado?.porcao} preco={pratoSelecionado?.preco} image={pratoSelecionado?.foto}/>
                 )}
                 
             </div>

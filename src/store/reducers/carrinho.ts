@@ -1,21 +1,23 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Pratos } from "../../api";
+
 
 type CarrinhoSlice = {
-    itens: number
+    itens: Pratos[]
 }
 
-const initialState: CarrinhoSlice ={
-    itens: 0
+const initialState: CarrinhoSlice = {
+    itens: []
 }
 const carrinhoSlice = createSlice({
     name: 'carrinho',
     initialState,
     reducers:{
-        adicionarItem: (state) => {
-            state.itens += 1
+        adicionarItem: (state, action: PayloadAction<Pratos>) => {
+            state.itens.push(action.payload)
         },
-        removerItem: (state) => {
-            if(state.itens > 0) state.itens -= 1
+        removerItem: (state, action: PayloadAction<number>) => {
+            state.itens = state.itens.filter(item => item.id !== action.payload)
         }
         
     }

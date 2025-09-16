@@ -1,6 +1,3 @@
-import { useState } from 'react'
-import {Link} from 'react-router-dom'
-
 import {Fundo, FundoPerfil, Imagem, Logo, Paragrafo, HeaderPerfilText, LinkHeader} from './styles'
 import fundoHeader from '../../assets/fundo.png'
 import logoHeader from '../../assets/logo.png'
@@ -41,7 +38,7 @@ const Header = ({type,onClick}:HeaderProps) => {
                     </LinkHeader>
                 </div>
                 <HeaderPerfilText float='direita' onClick={onClick}>
-                    {itens} produto(s) no carrinho
+                    {itens.length} produto(s) no carrinho
                 </HeaderPerfilText>
             </FundoPerfil>
         </Imagem>
