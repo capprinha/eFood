@@ -6,6 +6,7 @@ import { FundoCarrinho, CartContainer, Button, ValorContainer, ButtonContainer }
 import CartCard from "../CartCard"
 import { removerItem } from '../../store/reducers/carrinho'
 import { RootReducer } from '../../store'
+import Delivery from '../Delivery'
 
 type CartProps = {
     onClick?: () => void
@@ -21,7 +22,7 @@ const Cart = ({onClick}:CartProps) => {
     return(
         <FundoCarrinho>
             <CartContainer>
-                {itens.length === 0 ? (<p className='vazio'>Carrinho vazio</p>)
+                {/* {itens.length === 0 ? (<p className='vazio'>Carrinho vazio</p>)
                 : (
                     itens.map(item => (
                         <CartCard key={item.id} 
@@ -45,7 +46,8 @@ const Cart = ({onClick}:CartProps) => {
                 </ValorContainer>
                 <ButtonContainer>
                     <Button onClick={onClick}>Continuar com a entrega</Button>
-                </ButtonContainer>
+                </ButtonContainer> */}
+                <Delivery />
             </CartContainer>
         </FundoCarrinho>
 
