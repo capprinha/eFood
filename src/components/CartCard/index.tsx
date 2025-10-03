@@ -1,6 +1,5 @@
 import { CardContainer, Image, Infos, Lixeira } from './styles'
 
-import pizza from '../../assets/pizzaMobal.png'
 import lixeira from '../../assets/lixeira.png'
 
 type Props = {
